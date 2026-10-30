@@ -8,31 +8,295 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="theme-color" content="#f5f7fc">
 
 <title>Навигатор школы №65</title>
 
 <style>
 
-body{margin:0;font-family:Arial,sans-serif;background:#eef3fb;color:#18243a}
+:root {
 
-header{background:#2457c5;color:white;padding:24px 18px;text-align:center}
+  --blue:#3979f6;
 
-header h1{font-size:24px;margin:0 0 8px}
+  --blue2:#6399ff;
 
-main{max-width:700px;margin:auto;padding:16px}
+  --ink:#17243b;
 
-button{background:white;color:#2457c5;border:1px solid #d5def0;border-radius:12px;padding:14px;font-size:16px;font-weight:bold;cursor:pointer}
+  --muted:#8793a7;
 
-.menu{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  --bg:#f5f7fc;
 
-.panel{background:white;padding:18px;border-radius:16px;margin-top:16px;line-height:1.6;box-shadow:0 2px 8px #0000000a}
+  --line:#e9edf5;
 
-.hidden{display:none}
+  --white:#fff;
 
-.back{margin-bottom:12px;background:#e3ebff}
+}
 
-a{color:#2457c5}
+*{box-sizing:border-box}
+
+body{
+
+  margin:0;background:var(--bg);color:var(--ink);
+
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+
+}
+
+button,input{font:inherit}
+
+button{cursor:pointer}
+
+.app{max-width:620px;margin:auto;padding:20px 18px 115px}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;margin:8px 0 24px}
+
+.brand{display:flex;align-items:center;gap:11px}
+
+.brand-mark{
+
+  width:43px;height:43px;border-radius:15px;background:#e8f0ff;
+
+  display:grid;place-items:center;color:var(--blue)
+
+}
+
+.brand-mark svg{width:24px;height:24px}
+
+.eyebrow{font-size:10px;letter-spacing:1.5px;color:var(--muted);font-weight:800}
+
+.brand-title{font-size:18px;font-weight:750;margin-top:3px}
+
+.status{width:9px;height:9px;border-radius:50%;background:#35c98b;box-shadow:0 0 0 5px #35c98b20}
+
+.hero{
+
+  position:relative;overflow:hidden;padding:25px 23px 23px;
+
+  border-radius:27px;color:white;
+
+  background:linear-gradient(135deg,#2868e9,#5798ff);
+
+  box-shadow:0 13px 28px #3979f62b;
+
+}
+
+.hero:after{
+
+  content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffff30;
+
+  border-radius:50%;right:-80px;top:-85px;
+
+  box-shadow:0 0 0 24px #ffffff0c,0 0 0 50px #ffffff0a;
+
+}
+
+.hero-label{font-size:10px;letter-spacing:1.8px;color:#dce9ff;font-weight:800}
+
+.hero h1{font-size:29px;line-height:1.12;margin:14px 0 9px;max-width:300px}
+
+.hero p{font-size:13px;line-height:1.55;color:#e3edff;margin:0;max-width:280px}
+
+.hero-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:23px}
+
+.hero-tag{font-size:11px;color:white;background:#ffffff20;border:1px solid #ffffff40;padding:8px 11px;border-radius:20px}
+
+.hero-art{position:absolute;right:20px;bottom:18px;width:94px;height:94px;color:#ffffffb8}
+
+.hero-art svg{width:100%;height:100%}
+
+.search-wrap{position:relative;margin:19px 0 25px}
+
+.search-wrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:19px;color:#8995a9}
+
+.search{
+
+  width:100%;height:53px;border:1px solid var(--line);border-radius:17px;
+
+  background:white;padding:0 15px 0 45px;outline:none;color:var(--ink);
+
+  box-shadow:0 3px 12px #1d355708;
+
+}
+
+.search:focus{border-color:#8db4ff;box-shadow:0 0 0 3px #3979f619}
+
+.section-head{display:flex;align-items:end;justify-content:space-between;margin:25px 1px 13px}
+
+.section-head h2{font-size:19px;margin:0;letter-spacing:-.4px}
+
+.section-head span{font-size:11px;color:var(--muted)}
+
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+
+.quick{
+
+  background:white;border:1px solid var(--line);border-radius:21px;padding:16px;
+
+  text-align:left;color:var(--ink);transition:.15s;
+
+}
+
+.quick:active{transform:scale(.97)}
+
+.quick-icon{
+
+  width:43px;height:43px;border-radius:15px;background:#edf3ff;
+
+  display:grid;place-items:center;color:var(--blue);margin-bottom:15px;
+
+}
+
+.quick-icon svg{width:22px;height:22px}
+
+.quick b{font-size:14px;display:block}
+
+.quick small{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:19px}
+
+.stat{background:white;border:1px solid var(--line);border-radius:17px;padding:13px 8px;text-align:center}
+
+.stat strong{font-size:20px;display:block;color:var(--blue)}
+
+.stat span{font-size:10px;color:var(--muted);display:block;margin-top:4px}
+
+.page{display:none}
+
+.page.active{display:block}
+
+.page-title{font-size:27px;letter-spacing:-.8px;margin:7px 0 5px}
+
+.page-sub{color:var(--muted);font-size:13px;margin:0 0 19px}
+
+.item{
+
+  display:flex;align-items:center;gap:13px;background:white;
+
+  border:1px solid var(--line);border-radius:17px;padding:13px;
+
+  margin-bottom:9px;
+
+}
+
+.item-icon{
+
+  flex-shrink:0;width:43px;height:43px;border-radius:14px;
+
+  background:#edf3ff;color:var(--blue);display:grid;place-items:center;
+
+}
+
+.item-icon svg{width:21px;height:21px}
+
+.item-main{min-width:0;flex:1}
+
+.item-main b{font-size:13px;display:block}
+
+.item-main small{font-size:11px;color:var(--muted);display:block;margin-top:4px}
+
+.room-badge{font-size:12px;font-weight:750;color:var(--blue);background:#edf3ff;padding:8px 10px;border-radius:11px;white-space:nowrap}
+
+.route-card{
+
+  background:white;border:1px solid var(--line);border-radius:20px;
+
+  padding:17px;margin-bottom:12px;
+
+}
+
+.route-top{display:flex;gap:12px;align-items:center}
+
+.route-symbol{width:43px;height:43px;background:#edf3ff;color:var(--blue);border-radius:14px;display:grid;place-items:center}
+
+.route-symbol svg{width:22px}
+
+.route-top h3{font-size:14px;margin:0}
+
+.route-top p{font-size:11px;color:var(--muted);margin:5px 0 0}
+
+.route-toggle{
+
+  width:100%;margin-top:15px;border:0;border-radius:12px;padding:12px;
+
+  background:#edf3ff;color:var(--blue);font-size:12px;font-weight:750;
+
+}
+
+.steps{list-style:none;padding:7px 0 0;margin:0}
+
+.steps li{position:relative;padding:9px 0 9px 29px;font-size:12px;line-height:1.5;color:#637087}
+
+.steps li:before{
+
+  content:"";position:absolute;left:5px;top:13px;width:9px;height:9px;
+
+  border:2px solid var(--blue);background:white;border-radius:50%;
+
+}
+
+.steps li:not(:last-child):after{
+
+  content:"";position:absolute;left:10px;top:25px;bottom:-7px;
+
+  width:1px;background:#b9d0ff;
+
+}
+
+.note{
+
+  border-radius:17px;padding:15px;background:#fff8e9;border:1px solid #f4e6c7;
+
+  color:#896b30;font-size:12px;line-height:1.6;margin-top:13px;
+
+}
+
+.place-card{
+
+  background:white;border:1px solid var(--line);border-radius:18px;
+
+  padding:16px;margin-bottom:10px;display:flex;gap:13px;align-items:center;
+
+}
+
+.place-card .item-icon{background:#f0f4fa;color:#60728e}
+
+.empty{text-align:center;padding:25px;color:var(--muted);font-size:13px}
+
+.bottom-nav{
+
+  position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);
+
+  width:100%;max-width:620px;display:flex;justify-content:space-around;
+
+  padding:10px 5px calc(10px + env(safe-area-inset-bottom));
+
+  background:#ffffffed;backdrop-filter:blur(22px);
+
+  border-top:1px solid #e8edf5;
+
+}
+
+.bottom-nav button{
+
+  border:0;background:none;color:#929db0;display:flex;flex-direction:column;
+
+  align-items:center;gap:5px;min-width:58px;font-size:10px;font-weight:600;
+
+}
+
+.bottom-nav svg{width:21px;height:21px;stroke:currentColor}
+
+.bottom-nav button.active{color:var(--blue)}
+
+.bottom-nav button.active:before{
+
+  content:"";position:absolute;top:0;width:33px;height:3px;border-radius:5px;background:var(--blue)
+
+}
+
+.footer{text-align:center;color:#a1aabc;font-size:10px;margin:28px 0 5px}
 
 </style>
 
@@ -40,159 +304,439 @@ a{color:#2457c5}
 
 <body>
 
-<header>
+<div class="app">
 
-<h1>🏫 Навигатор школы №65</h1>
+<header class="topbar">
 
-<div>Корпус 3 · Помощник ученика</div>
+  <div class="brand">
+
+    <div class="brand-mark" id="brandIcon"></div>
+
+    <div>
+
+      <div class="eyebrow">ШКОЛА №65 · КОРПУС 3</div>
+
+      <div class="brand-title">School Navigator</div>
+
+    </div>
+
+  </div>
+
+  <div class="status" title="Навигатор готов"></div>
 
 </header>
 
 <main>
 
-<div id="home">
+<section id="home" class="page active">
 
-<div class="panel">
+  <div class="hero">
 
-<b>Куда направляемся?</b><br>
+    <div class="hero-label">ТВОЙ ШКОЛЬНЫЙ ПОМОЩНИК</div>
 
-Выбери нужный раздел.
+    <h1>Всё нужное.<br>В одном месте.</h1>
 
-</div>
+    <p>Кабинеты, учителя и маршруты по школе — быстро и удобно.</p>
 
-<div class="menu">
+    <div class="hero-bottom">
 
-<button onclick="show('subjects')">📚 Предметы</button>
+      <span class="hero-tag">Корпус 3</span>
 
-<button onclick="show('rooms')">🚪 Кабинеты</button>
+    </div>
 
-<button onclick="show('teachers')">👩‍🏫 Учителя</button>
+    <div class="hero-art" id="heroIcon"></div>
 
-<button onclick="show('routes')">🧭 Маршруты</button>
+  </div>
 
-<button onclick="show('floors')">🏢 Этажи</button>
+  <div class="search-wrap">
 
-<button onclick="show('places')">🛋️ Места школы</button>
+    <span id="searchIcon"></span>
 
-</div>
+    <input class="search" id="search" placeholder="Найти кабинет или предмет..." oninput="searchAll()">
 
-</div>
+  </div>
 
-<div id="content" class="hidden">
+  <div id="searchResults"></div>
 
-<button class="back" onclick="goHome()">← Главное меню</button>
+  <div class="section-head">
 
-<div class="panel" id="details"></div>
+    <h2>Быстрый доступ</h2><span>4 раздела</span>
 
-</div>
+  </div>
+
+  <div class="quick-grid">
+
+    <button class="quick" onclick="showPage('subjects')">
+
+      <div class="quick-icon" data-icon="book"></div>
+
+      <b>Предметы</b><small>Школьное расписание</small>
+
+    </button>
+
+    <button class="quick" onclick="showPage('rooms')">
+
+      <div class="quick-icon" data-icon="door"></div>
+
+      <b>Кабинеты</b><small>Найти нужный номер</small>
+
+    </button>
+
+    <button class="quick" onclick="showPage('teachers')">
+
+      <div class="quick-icon" data-icon="person"></div>
+
+      <b>Учителя</b><small>Кто ведёт урок</small>
+
+    </button>
+
+    <button class="quick" onclick="showPage('routes')">
+
+      <div class="quick-icon" data-icon="route"></div>
+
+      <b>Маршруты</b><small>Как пройти по школе</small>
+
+    </button>
+
+  </div>
+
+  <div class="section-head"><h2>Навигатор школы</h2><span>Кратко</span></div>
+
+  <div class="stats">
+
+    <div class="stat"><strong>11</strong><span>Предметов</span></div>
+
+    <div class="stat"><strong>10</strong><span>Кабинетов и залов</span></div>
+
+    <div class="stat"><strong>4</strong><span>Этажа</span></div>
+
+  </div>
+
+</section>
+
+<section id="subjects" class="page">
+
+  <h1 class="page-title">Предметы</h1>
+
+  <p class="page-sub">Выбери предмет и узнай, где проходит урок.</p>
+
+  <div id="subjectList"></div>
+
+</section>
+
+<section id="rooms" class="page">
+
+  <h1 class="page-title">Кабинеты</h1>
+
+  <p class="page-sub">Список известных кабинетов корпуса 3.</p>
+
+  <div id="roomList"></div>
+
+</section>
+
+<section id="teachers" class="page">
+
+  <h1 class="page-title">Учителя</h1>
+
+  <p class="page-sub">Преподаватели и их предметы.</p>
+
+  <div id="teacherList"></div>
+
+</section>
+
+<section id="routes" class="page">
+
+  <h1 class="page-title">Маршруты</h1>
+
+  <p class="page-sub">Путь от главного входа до нужного кабинета.</p>
+
+  <div class="route-card">
+
+    <div class="route-top">
+
+      <div class="route-symbol" data-icon="route"></div>
+
+      <div><h3>Кабинет 315</h3><p>Биология · 3-й этаж</p></div>
+
+    </div>
+
+    <button class="route-toggle" onclick="toggleRoute('steps315',this)">Показать маршрут</button>
+
+    <ol class="steps" id="steps315" hidden>
+
+      <li>Пройди главный вход, гардероб и турникеты.</li>
+
+      <li>Иди прямо мимо центральной лестницы и медпункта 112.</li>
+
+      <li>Правее будет боковая центральная лестница.</li>
+
+      <li>Поднимись по ней на третий этаж.</li>
+
+      <li>Кабинет 315 будет виден сразу.</li>
+
+    </ol>
+
+  </div>
+
+  <div class="route-card">
+
+    <div class="route-top">
+
+      <div class="route-symbol" data-icon="route"></div>
+
+      <div><h3>Кабинет 419</h3><p>Английский язык · 4-й этаж</p></div>
+
+    </div>
+
+    <button class="route-toggle" onclick="toggleRoute('steps419',this)">Показать маршрут</button>
+
+    <ol class="steps" id="steps419" hidden>
+
+      <li>Пройди главный вход, гардероб и турникеты.</li>
+
+      <li>Поверни направо к центральной лестнице.</li>
+
+      <li>Поднимись на четвёртый этаж.</li>
+
+      <li>Выйди и пройди направо через стеклянную дверь.</li>
+
+      <li>Найди кабинет 419.</li>
+
+    </ol>
+
+  </div>
+
+  <div class="note"><b>Важно:</b> на третий этаж нельзя попасть по центральной лестнице обычным проходом — там школьный музей. Для кабинетов 314 и 315 используй боковую или боковую центральную лестницу.</div>
+
+</section>
+
+<section id="places" class="page">
+
+  <h1 class="page-title">Места школы</h1>
+
+  <p class="page-sub">Полезные места корпуса 3.</p>
+
+  <div id="placesList"></div>
+
+</section>
 
 </main>
 
+<div class="footer">SCHOOL NAVIGATOR · №65 · BUILDING 3</div>
+
+</div>
+
+<nav class="bottom-nav">
+
+  <button class="active" data-page="home" onclick="showPage('home',this)">
+
+    <span data-icon="home"></span>Главная
+
+  </button>
+
+  <button data-page="subjects" onclick="showPage('subjects',this)">
+
+    <span data-icon="book"></span>Предметы
+
+  </button>
+
+  <button data-page="rooms" onclick="showPage('rooms',this)">
+
+    <span data-icon="door"></span>Кабинеты
+
+  </button>
+
+  <button data-page="routes" onclick="showPage('routes',this)">
+
+    <span data-icon="route"></span>Маршруты
+
+  </button>
+
+  <button data-page="places" onclick="showPage('places',this)">
+
+    <span data-icon="building"></span>Школа
+
+  </button>
+
+</nav>
+
 <script>
 
-const data={
+const icons = {
 
-subjects:`<h2>📚 Предметы</h2>
+  school:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6M9 10h.01M15 10h.01M12 10h.01"/></svg>`,
 
-История — 214<br>Русский язык — 220<br>Литература — 220<br>
+  home:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg>`,
 
-Биология — 315<br>География — 314<br>Технология — 114 или 116<br>
+  book:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20M8 7h8"/></svg>`,
 
-Музыка — 401<br>ИЗО — 401<br>Английский язык — 419<br>
+  door:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V3h14v18M3 21h18M9 21V5h8v16"/><circle cx="14" cy="13" r=".8" fill="currentColor" stroke="none"/></svg>`,
 
-Математика — 421 (уточняй расписание)<br>Физкультура — спортзал №2`,
+  person:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`,
 
-rooms:`<h2>🚪 Кабинеты</h2>
+  route:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H12a3 3 0 0 0 3-3V9a3 3 0 0 1 3-3"/></svg>`,
 
-114 — технология (предположительно для девочек)<br>
+  building:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h2m2 0h2M9 11h2m2 0h2M9 15h2m2 0h2M10 21v-3h4v3"/></svg>`,
 
-116 — технология<br>214 — история<br>220 — русский язык и литература<br>
+  search:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>`,
 
-314 — география<br>315 — биология<br>401 — музыка и ИЗО<br>
+  pin:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>`,
 
-419 — английский язык<br>421 — математика (ориентировочно)<br>
+  medical:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg>`,
 
-Физкультура — спортивный зал №2`,
+  food:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a8 8 0 0 1-16 0ZM3 21h18M8 4v3m4-4v4m4-3v3"/></svg>`,
 
-teachers:`<h2>👩‍🏫 Учителя</h2>
+  sport:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>`,
 
-История — Альфия Рамильевна, 214<br>
-
-Русский язык — Галина Сергеевна, 220<br>
-
-Литература — Галина Сергеевна, 220<br>
-
-Биология — Екатерина Олеговна, 315<br>
-
-География — Алёна Николаевна, 314<br>
-
-Технология — Андрей Анатольевич, 116<br>
-
-Музыка — Динис Русланович, 401<br>
-
-ИЗО — Наталья Владимировна, 401<br>
-
-Английский — Анжелика Владимировна, 419<br>
-
-Математика — Людмила Николаевна, 421 (ориентировочно)<br>
-
-Физкультура — Мария Михайловна, спортзал №2`,
-
-routes:`<h2>🧭 Маршруты</h2>
-
-<b>От входа до кабинета 315:</b><br>
-
-Пройди гардероб и турникеты. Иди прямо мимо центральной лестницы и медпункта 112. Правее находится боковая центральная лестница. Поднимись на 3-й этаж — кабинет 315 будет виден сразу.<br><br>
-
-<b>От входа до кабинета 419:</b><br>
-
-Пройди гардероб и турникеты, поверни направо к центральной лестнице и поднимись на 4-й этаж. Поверни направо через стеклянную дверь — кабинет 419.<br><br>
-
-<b>Важно:</b> на 3-й этаж нельзя пройти обычным путём по центральной лестнице. Используй боковую или боковую центральную лестницу.`,
-
-floors:`<h2>🏢 Этажи и блоки</h2>
-
-Блок Н — начальная школа.<br>
-
-Блок С — старшая школа.<br>
-
-Блок Ц — центральная часть: столовая и спортивные залы.<br><br>
-
-3-й этаж: кабинеты 314 (география) и 315 (биология). Иди по боковой или боковой центральной лестнице.<br><br>
-
-4-й этаж: кабинет 419 — английский язык; кабинет 421 — математика (ориентировочно).<br><br>
-
-2-й этаж: кабинет 220 — русский язык и литература; спортивный зал №2.`,
-
-places:`<h2>🛋️ Места школы</h2>
-
-Столовая — в центральном блоке Ц, после холла.<br>
-
-Медпункт — кабинет 112, по пути от входа к лестницам.<br>
-
-Зоны отдыха — диванчики, столы и места для сидения в коридорах.<br>
-
-Спортивные залы — центральный блок Ц.<br><br>
-
-Блок Н находится слева от центральной части, блок С — справа.`
+  rest:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V7a2 2 0 0 1 4 0v3h8V7a2 2 0 0 1 4 0v5M3 12h18v7H3zM6 19v2m12-2v2"/></svg>`
 
 };
 
-function show(key){
+function icon(name){
 
-document.getElementById('home').classList.add('hidden');
-
-document.getElementById('content').classList.remove('hidden');
-
-document.getElementById('details').innerHTML=data[key];
+  return icons[name] || icons.school;
 
 }
 
-function goHome(){
+document.getElementById("brandIcon").innerHTML=icon("school");
 
-document.getElementById('content').classList.add('hidden');
+document.getElementById("heroIcon").innerHTML=icon("school");
 
-document.getElementById('home').classList.remove('hidden');
+document.getElementById("searchIcon").innerHTML=icon("search");
+
+document.querySelectorAll("[data-icon]").forEach(el=>{
+
+  el.innerHTML=icon(el.dataset.icon);
+
+});
+
+const data=[
+
+ {subject:"История",room:"214",teacher:"Альфия Рамильевна",ico:"book"},
+
+ {subject:"Русский язык",room:"220",teacher:"Галина Сергеевна",ico:"book"},
+
+ {subject:"Литература",room:"220",teacher:"Галина Сергеевна",ico:"book"},
+
+ {subject:"Биология",room:"315",teacher:"Екатерина Олеговна",ico:"book"},
+
+ {subject:"География",room:"314",teacher:"Алёна Николаевна",ico:"pin"},
+
+ {subject:"Технология",room:"116",teacher:"Андрей Анатольевич",ico:"door"},
+
+ {subject:"Музыка",room:"401",teacher:"Динис Русланович",ico:"book"},
+
+ {subject:"ИЗО",room:"401",teacher:"Наталья Владимировна",ico:"book"},
+
+ {subject:"Английский язык",room:"419",teacher:"Анжелика Владимировна",ico:"book"},
+
+ {subject:"Математика",room:"421",teacher:"Людмила Николаевна",ico:"book"},
+
+ {subject:"Физкультура",room:"Спортзал №2",teacher:"Мария Михайловна",ico:"sport"}
+
+];
+
+function makeItem(item,mode){
+
+  let title=mode==="teachers"?item.teacher:
+
+    mode==="rooms"?"Кабинет "+item.room:item.subject;
+
+  let subtitle=mode==="teachers"?item.subject:
+
+    mode==="rooms"?item.subject+" · "+item.teacher:item.teacher;
+
+  let badge=mode==="teachers"?item.room:item.room;
+
+  return `<div class="item">
+
+    <div class="item-icon">${icon(item.ico)}</div>
+
+    <div class="item-main"><b>${title}</b><small>${subtitle}</small></div>
+
+    <span class="room-badge">${badge}</span>
+
+  </div>`;
+
+}
+
+document.getElementById("subjectList").innerHTML=data.map(x=>makeItem(x,"subjects")).join("");
+
+document.getElementById("roomList").innerHTML=data.map(x=>makeItem(x,"rooms")).join("");
+
+document.getElementById("teacherList").innerHTML=data.map(x=>makeItem(x,"teachers")).join("");
+
+const places=[
+
+ ["Гардероб","После главного входа","door"],
+
+ ["Медпункт 112","Рядом с маршрутом к лестницам","medical"],
+
+ ["Столовая","Центральный блок Ц","food"],
+
+ ["Спортивный зал №2","Для уроков физкультуры","sport"],
+
+ ["Зоны отдыха","Диваны, столы и места для отдыха","rest"]
+
+];
+
+document.getElementById("placesList").innerHTML=places.map(p=>`
+
+ <div class="place-card">
+
+  <div class="item-icon">${icon(p[2])}</div>
+
+  <div class="item-main"><b>${p[0]}</b><small>${p[1]}</small></div>
+
+ </div>`).join("");
+
+function showPage(id,button){
+
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+
+ document.getElementById(id).classList.add("active");
+
+ document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.remove("active"));
+
+ const target=button || document.querySelector(`.bottom-nav button[data-page="${id}"]`);
+
+ if(target)target.classList.add("active");
+
+ window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+function toggleRoute(id,button){
+
+ const el=document.getElementById(id);
+
+ el.hidden=!el.hidden;
+
+ button.textContent=el.hidden?"Показать маршрут":"Скрыть маршрут";
+
+}
+
+function searchAll(){
+
+ const q=document.getElementById("search").value.trim().toLowerCase();
+
+ const box=document.getElementById("searchResults");
+
+ if(!q){box.innerHTML="";return;}
+
+ const found=data.filter(x=>
+
+  x.subject.toLowerCase().includes(q)||
+
+  x.room.toLowerCase().includes(q)||
+
+  x.teacher.toLowerCase().includes(q)
+
+ );
+
+ box.innerHTML=`<div class="section-head"><h2>Результаты</h2><span>${found.length} найдено</span></div>`+
+
+ (found.length?found.map(x=>makeItem(x,"subjects")).join(""):'<div class="empty">Ничего не найдено. Попробуй другой запрос.</div>');
 
 }
 
