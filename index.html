@@ -404,9 +404,9 @@ button{cursor:pointer}
 
   <div class="stats">
 
-    <div class="stat"><strong>11</strong><span>Предметов</span></div>
+    <div class="stat"><strong>12</strong><span>Предметов и записей</span></div>
 
-    <div class="stat"><strong>10</strong><span>Кабинетов и залов</span></div>
+    <div class="stat"><strong>11</strong><span>Кабинетов и залов</span></div>
 
     <div class="stat"><strong>4</strong><span>Этажа</span></div>
 
@@ -501,6 +501,32 @@ button{cursor:pointer}
       <li>Выйди и пройди направо через стеклянную дверь.</li>
 
       <li>Найди кабинет 419.</li>
+
+    </ol>
+
+  </div>
+
+  <div class="route-card">
+
+    <div class="route-top">
+
+      <div class="route-symbol" data-icon="route"></div>
+
+      <div><h3>Кабинет 420</h3><p>Английский язык · 4-й этаж</p></div>
+
+    </div>
+
+    <button class="route-toggle" onclick="toggleRoute('steps420',this)">Показать маршрут</button>
+
+    <ol class="steps" id="steps420" hidden>
+
+      <li>Пройди главный вход, гардероб и турникеты.</li>
+
+      <li>Поверни направо к центральной лестнице.</li>
+
+      <li>Поднимись на четвёртый этаж.</li>
+
+      <li>Найди кабинет 420 рядом с кабинетом 419.</li>
 
     </ol>
 
@@ -630,6 +656,8 @@ const data=[
 
  {subject:"Английский язык",room:"419",teacher:"Анжелика Владимировна",ico:"book"},
 
+ {subject:"Английский язык",room:"420",teacher:"Мисс Грануш",ico:"book"},
+
  {subject:"Математика",room:"421",teacher:"Людмила Николаевна",ico:"book"},
 
  {subject:"Физкультура",room:"Спортзал №2",teacher:"Мария Михайловна",ico:"sport"}
@@ -646,7 +674,7 @@ function makeItem(item,mode){
 
     mode==="rooms"?item.subject+" · "+item.teacher:item.teacher;
 
-  let badge=mode==="teachers"?item.room:item.room;
+  let badge=item.room;
 
   return `<div class="item">
 
@@ -698,7 +726,7 @@ function showPage(id,button){
 
  document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.remove("active"));
 
- const target=button || document.querySelector(`.bottom-nav button[data-page="${id}"]`);
+ const target=button || document.querySelector(\`.bottom-nav button[data-page="\${id}"]\`);
 
  if(target)target.classList.add("active");
 
@@ -734,7 +762,7 @@ function searchAll(){
 
  );
 
- box.innerHTML=`<div class="section-head"><h2>Результаты</h2><span>${found.length} найдено</span></div>`+
+ box.innerHTML=\`<div class="section-head"><h2>Результаты</h2><span>\${found.length} найдено</span></div>\`+
 
  (found.length?found.map(x=>makeItem(x,"subjects")).join(""):'<div class="empty">Ничего не найдено. Попробуй другой запрос.</div>');
 
