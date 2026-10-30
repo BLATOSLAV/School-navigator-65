@@ -8,7 +8,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="theme-color" content="#f5f7fc">
 
@@ -16,51 +16,23 @@
 
 <style>
 
-:root {
-
-  --blue:#3979f6;
-
-  --blue2:#6399ff;
-
-  --ink:#17243b;
-
-  --muted:#8793a7;
-
-  --bg:#f5f7fc;
-
-  --line:#e9edf5;
-
-  --white:#fff;
-
-}
+:root{--blue:#3979f6;--ink:#17243b;--muted:#8793a7;--bg:#f5f7fc;--line:#e9edf5}
 
 *{box-sizing:border-box}
 
-body{
-
-  margin:0;background:var(--bg);color:var(--ink);
-
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
-
-}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 
 button,input{font:inherit}
 
 button{cursor:pointer}
 
-.app{max-width:620px;margin:auto;padding:20px 18px 115px}
+.app{max-width:620px;margin:auto;padding:20px 18px 110px}
 
 .topbar{display:flex;justify-content:space-between;align-items:center;margin:8px 0 24px}
 
 .brand{display:flex;align-items:center;gap:11px}
 
-.brand-mark{
-
-  width:43px;height:43px;border-radius:15px;background:#e8f0ff;
-
-  display:grid;place-items:center;color:var(--blue)
-
-}
+.brand-mark{width:43px;height:43px;border-radius:15px;background:#e8f0ff;display:grid;place-items:center;color:var(--blue)}
 
 .brand-mark svg{width:24px;height:24px}
 
@@ -68,37 +40,19 @@ button{cursor:pointer}
 
 .brand-title{font-size:18px;font-weight:750;margin-top:3px}
 
-.status{width:9px;height:9px;border-radius:50%;background:#35c98b;box-shadow:0 0 0 5px #35c98b20}
+.status{width:9px;height:9px;border-radius:50%;background:#35c98b}
 
-.hero{
+.hero{position:relative;overflow:hidden;padding:25px 23px;border-radius:27px;color:white;background:linear-gradient(135deg,#2868e9,#5798ff);box-shadow:0 13px 28px #3979f62b}
 
-  position:relative;overflow:hidden;padding:25px 23px 23px;
-
-  border-radius:27px;color:white;
-
-  background:linear-gradient(135deg,#2868e9,#5798ff);
-
-  box-shadow:0 13px 28px #3979f62b;
-
-}
-
-.hero:after{
-
-  content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffff30;
-
-  border-radius:50%;right:-80px;top:-85px;
-
-  box-shadow:0 0 0 24px #ffffff0c,0 0 0 50px #ffffff0a;
-
-}
+.hero:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffff30;border-radius:50%;right:-80px;top:-85px;box-shadow:0 0 0 24px #ffffff0c,0 0 0 50px #ffffff0a}
 
 .hero-label{font-size:10px;letter-spacing:1.8px;color:#dce9ff;font-weight:800}
 
-.hero h1{font-size:29px;line-height:1.12;margin:14px 0 9px;max-width:300px}
+.hero h1{font-size:29px;line-height:1.12;margin:14px 0 9px}
 
 .hero p{font-size:13px;line-height:1.55;color:#e3edff;margin:0;max-width:280px}
 
-.hero-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:23px}
+.hero-bottom{margin-top:22px}
 
 .hero-tag{font-size:11px;color:white;background:#ffffff20;border:1px solid #ffffff40;padding:8px 11px;border-radius:20px}
 
@@ -110,43 +64,23 @@ button{cursor:pointer}
 
 .search-wrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:19px;color:#8995a9}
 
-.search{
+.search{width:100%;height:53px;border:1px solid var(--line);border-radius:17px;background:white;padding:0 15px 0 45px;outline:none;color:var(--ink)}
 
-  width:100%;height:53px;border:1px solid var(--line);border-radius:17px;
-
-  background:white;padding:0 15px 0 45px;outline:none;color:var(--ink);
-
-  box-shadow:0 3px 12px #1d355708;
-
-}
-
-.search:focus{border-color:#8db4ff;box-shadow:0 0 0 3px #3979f619}
+.search:focus{border-color:#8db4ff}
 
 .section-head{display:flex;align-items:end;justify-content:space-between;margin:25px 1px 13px}
 
-.section-head h2{font-size:19px;margin:0;letter-spacing:-.4px}
+.section-head h2{font-size:19px;margin:0}
 
 .section-head span{font-size:11px;color:var(--muted)}
 
 .quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
 
-.quick{
+.quick{background:white;border:1px solid var(--line);border-radius:21px;padding:16px;text-align:left;color:var(--ink)}
 
-  background:white;border:1px solid var(--line);border-radius:21px;padding:16px;
+.quick:active{transform:scale(.98)}
 
-  text-align:left;color:var(--ink);transition:.15s;
-
-}
-
-.quick:active{transform:scale(.97)}
-
-.quick-icon{
-
-  width:43px;height:43px;border-radius:15px;background:#edf3ff;
-
-  display:grid;place-items:center;color:var(--blue);margin-bottom:15px;
-
-}
+.quick-icon{width:43px;height:43px;border-radius:15px;background:#edf3ff;display:grid;place-items:center;color:var(--blue);margin-bottom:15px}
 
 .quick-icon svg{width:22px;height:22px}
 
@@ -166,27 +100,13 @@ button{cursor:pointer}
 
 .page.active{display:block}
 
-.page-title{font-size:27px;letter-spacing:-.8px;margin:7px 0 5px}
+.page-title{font-size:27px;margin:7px 0 5px}
 
 .page-sub{color:var(--muted);font-size:13px;margin:0 0 19px}
 
-.item{
+.item{display:flex;align-items:center;gap:13px;background:white;border:1px solid var(--line);border-radius:17px;padding:13px;margin-bottom:9px}
 
-  display:flex;align-items:center;gap:13px;background:white;
-
-  border:1px solid var(--line);border-radius:17px;padding:13px;
-
-  margin-bottom:9px;
-
-}
-
-.item-icon{
-
-  flex-shrink:0;width:43px;height:43px;border-radius:14px;
-
-  background:#edf3ff;color:var(--blue);display:grid;place-items:center;
-
-}
+.item-icon{flex-shrink:0;width:43px;height:43px;border-radius:14px;background:#edf3ff;color:var(--blue);display:grid;place-items:center}
 
 .item-icon svg{width:21px;height:21px}
 
@@ -198,13 +118,7 @@ button{cursor:pointer}
 
 .room-badge{font-size:12px;font-weight:750;color:var(--blue);background:#edf3ff;padding:8px 10px;border-radius:11px;white-space:nowrap}
 
-.route-card{
-
-  background:white;border:1px solid var(--line);border-radius:20px;
-
-  padding:17px;margin-bottom:12px;
-
-}
+.route-card{background:white;border:1px solid var(--line);border-radius:20px;padding:17px;margin-bottom:12px}
 
 .route-top{display:flex;gap:12px;align-items:center}
 
@@ -216,85 +130,31 @@ button{cursor:pointer}
 
 .route-top p{font-size:11px;color:var(--muted);margin:5px 0 0}
 
-.route-toggle{
-
-  width:100%;margin-top:15px;border:0;border-radius:12px;padding:12px;
-
-  background:#edf3ff;color:var(--blue);font-size:12px;font-weight:750;
-
-}
+.route-toggle{width:100%;margin-top:15px;border:0;border-radius:12px;padding:12px;background:#edf3ff;color:var(--blue);font-size:12px;font-weight:750}
 
 .steps{list-style:none;padding:7px 0 0;margin:0}
 
 .steps li{position:relative;padding:9px 0 9px 29px;font-size:12px;line-height:1.5;color:#637087}
 
-.steps li:before{
+.steps li:before{content:"";position:absolute;left:5px;top:13px;width:9px;height:9px;border:2px solid var(--blue);background:white;border-radius:50%}
 
-  content:"";position:absolute;left:5px;top:13px;width:9px;height:9px;
+.steps li:not(:last-child):after{content:"";position:absolute;left:10px;top:25px;bottom:-7px;width:1px;background:#b9d0ff}
 
-  border:2px solid var(--blue);background:white;border-radius:50%;
+.note{border-radius:17px;padding:15px;background:#fff8e9;border:1px solid #f4e6c7;color:#896b30;font-size:12px;line-height:1.6;margin-top:13px}
 
-}
-
-.steps li:not(:last-child):after{
-
-  content:"";position:absolute;left:10px;top:25px;bottom:-7px;
-
-  width:1px;background:#b9d0ff;
-
-}
-
-.note{
-
-  border-radius:17px;padding:15px;background:#fff8e9;border:1px solid #f4e6c7;
-
-  color:#896b30;font-size:12px;line-height:1.6;margin-top:13px;
-
-}
-
-.place-card{
-
-  background:white;border:1px solid var(--line);border-radius:18px;
-
-  padding:16px;margin-bottom:10px;display:flex;gap:13px;align-items:center;
-
-}
+.place-card{background:white;border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:10px;display:flex;gap:13px;align-items:center}
 
 .place-card .item-icon{background:#f0f4fa;color:#60728e}
 
 .empty{text-align:center;padding:25px;color:var(--muted);font-size:13px}
 
-.bottom-nav{
+.bottom-nav{position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:620px;display:flex;justify-content:space-around;padding:10px 5px calc(10px + env(safe-area-inset-bottom));background:#ffffffed;backdrop-filter:blur(22px);border-top:1px solid #e8edf5}
 
-  position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);
-
-  width:100%;max-width:620px;display:flex;justify-content:space-around;
-
-  padding:10px 5px calc(10px + env(safe-area-inset-bottom));
-
-  background:#ffffffed;backdrop-filter:blur(22px);
-
-  border-top:1px solid #e8edf5;
-
-}
-
-.bottom-nav button{
-
-  border:0;background:none;color:#929db0;display:flex;flex-direction:column;
-
-  align-items:center;gap:5px;min-width:58px;font-size:10px;font-weight:600;
-
-}
+.bottom-nav button{border:0;background:none;color:#929db0;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:58px;font-size:10px;font-weight:600}
 
 .bottom-nav svg{width:21px;height:21px;stroke:currentColor}
 
 .bottom-nav button.active{color:var(--blue)}
-
-.bottom-nav button.active:before{
-
-  content:"";position:absolute;top:0;width:33px;height:3px;border-radius:5px;background:var(--blue)
-
-}
 
 .footer{text-align:center;color:#a1aabc;font-size:10px;margin:28px 0 5px}
 
@@ -308,21 +168,15 @@ button{cursor:pointer}
 
 <header class="topbar">
 
-  <div class="brand">
+<div class="brand">
 
-    <div class="brand-mark" id="brandIcon"></div>
+<div class="brand-mark" id="brandIcon"></div>
 
-    <div>
+<div><div class="eyebrow">ШКОЛА №65 · КОРПУС 3</div><div class="brand-title">School Navigator</div></div>
 
-      <div class="eyebrow">ШКОЛА №65 · КОРПУС 3</div>
+</div>
 
-      <div class="brand-title">School Navigator</div>
-
-    </div>
-
-  </div>
-
-  <div class="status" title="Навигатор готов"></div>
+<div class="status"></div>
 
 </header>
 
@@ -330,219 +184,159 @@ button{cursor:pointer}
 
 <section id="home" class="page active">
 
-  <div class="hero">
+<div class="hero">
 
-    <div class="hero-label">ТВОЙ ШКОЛЬНЫЙ ПОМОЩНИК</div>
+<div class="hero-label">ТВОЙ ШКОЛЬНЫЙ ПОМОЩНИК</div>
 
-    <h1>Всё нужное.<br>В одном месте.</h1>
+<h1>Всё нужное.<br>В одном месте.</h1>
 
-    <p>Кабинеты, учителя и маршруты по школе — быстро и удобно.</p>
+<p>Кабинеты, учителя и маршруты по школе — быстро и удобно.</p>
 
-    <div class="hero-bottom">
+<div class="hero-bottom"><span class="hero-tag">Корпус 3</span></div>
 
-      <span class="hero-tag">Корпус 3</span>
+<div class="hero-art" id="heroIcon"></div>
 
-    </div>
+</div>
 
-    <div class="hero-art" id="heroIcon"></div>
+<div class="search-wrap">
 
-  </div>
+<span id="searchIcon"></span>
 
-  <div class="search-wrap">
+<input class="search" id="search" placeholder="Найти кабинет или предмет..." oninput="searchAll()">
 
-    <span id="searchIcon"></span>
+</div>
 
-    <input class="search" id="search" placeholder="Найти кабинет или предмет..." oninput="searchAll()">
+<div id="searchResults"></div>
 
-  </div>
+<div class="section-head"><h2>Быстрый доступ</h2><span>4 раздела</span></div>
 
-  <div id="searchResults"></div>
+<div class="quick-grid">
 
-  <div class="section-head">
+<button class="quick" onclick="showPage('subjects')"><div class="quick-icon" data-icon="book"></div><b>Предметы</b><small>Школьные предметы</small></button>
 
-    <h2>Быстрый доступ</h2><span>4 раздела</span>
+<button class="quick" onclick="showPage('rooms')"><div class="quick-icon" data-icon="door"></div><b>Кабинеты</b><small>Найти нужный номер</small></button>
 
-  </div>
+<button class="quick" onclick="showPage('teachers')"><div class="quick-icon" data-icon="person"></div><b>Учителя</b><small>Кто ведёт урок</small></button>
 
-  <div class="quick-grid">
+<button class="quick" onclick="showPage('routes')"><div class="quick-icon" data-icon="route"></div><b>Маршруты</b><small>Как пройти по школе</small></button>
 
-    <button class="quick" onclick="showPage('subjects')">
+</div>
 
-      <div class="quick-icon" data-icon="book"></div>
+<div class="section-head"><h2>Навигатор школы</h2><span>Кратко</span></div>
 
-      <b>Предметы</b><small>Школьное расписание</small>
+<div class="stats">
 
-    </button>
+<div class="stat"><strong>11</strong><span>Предметов</span></div>
 
-    <button class="quick" onclick="showPage('rooms')">
+<div class="stat"><strong>12</strong><span>Записей</span></div>
 
-      <div class="quick-icon" data-icon="door"></div>
+<div class="stat"><strong>4</strong><span>Этажа</span></div>
 
-      <b>Кабинеты</b><small>Найти нужный номер</small>
-
-    </button>
-
-    <button class="quick" onclick="showPage('teachers')">
-
-      <div class="quick-icon" data-icon="person"></div>
-
-      <b>Учителя</b><small>Кто ведёт урок</small>
-
-    </button>
-
-    <button class="quick" onclick="showPage('routes')">
-
-      <div class="quick-icon" data-icon="route"></div>
-
-      <b>Маршруты</b><small>Как пройти по школе</small>
-
-    </button>
-
-  </div>
-
-  <div class="section-head"><h2>Навигатор школы</h2><span>Кратко</span></div>
-
-  <div class="stats">
-
-    <div class="stat"><strong>12</strong><span>Предметов и записей</span></div>
-
-    <div class="stat"><strong>11</strong><span>Кабинетов и залов</span></div>
-
-    <div class="stat"><strong>4</strong><span>Этажа</span></div>
-
-  </div>
+</div>
 
 </section>
 
 <section id="subjects" class="page">
 
-  <h1 class="page-title">Предметы</h1>
+<h1 class="page-title">Предметы</h1><p class="page-sub">Выбери предмет и узнай, где проходит урок.</p>
 
-  <p class="page-sub">Выбери предмет и узнай, где проходит урок.</p>
-
-  <div id="subjectList"></div>
+<div id="subjectList"></div>
 
 </section>
 
 <section id="rooms" class="page">
 
-  <h1 class="page-title">Кабинеты</h1>
+<h1 class="page-title">Кабинеты</h1><p class="page-sub">Список кабинетов корпуса 3.</p>
 
-  <p class="page-sub">Список известных кабинетов корпуса 3.</p>
-
-  <div id="roomList"></div>
+<div id="roomList"></div>
 
 </section>
 
 <section id="teachers" class="page">
 
-  <h1 class="page-title">Учителя</h1>
+<h1 class="page-title">Учителя</h1><p class="page-sub">Преподаватели и их предметы.</p>
 
-  <p class="page-sub">Преподаватели и их предметы.</p>
-
-  <div id="teacherList"></div>
+<div id="teacherList"></div>
 
 </section>
 
 <section id="routes" class="page">
 
-  <h1 class="page-title">Маршруты</h1>
+<h1 class="page-title">Маршруты</h1><p class="page-sub">Путь от главного входа до нужного кабинета.</p>
 
-  <p class="page-sub">Путь от главного входа до нужного кабинета.</p>
+<div class="route-card">
 
-  <div class="route-card">
+<div class="route-top"><div class="route-symbol" data-icon="route"></div><div><h3>Кабинет 315</h3><p>Биология · 3-й этаж</p></div></div>
 
-    <div class="route-top">
+<button class="route-toggle" onclick="toggleRoute('steps315',this)">Показать маршрут</button>
 
-      <div class="route-symbol" data-icon="route"></div>
+<ol class="steps" id="steps315" hidden>
 
-      <div><h3>Кабинет 315</h3><p>Биология · 3-й этаж</p></div>
+<li>Пройди главный вход, гардероб и турникеты.</li>
 
-    </div>
+<li>Иди прямо мимо центральной лестницы и медпункта 112.</li>
 
-    <button class="route-toggle" onclick="toggleRoute('steps315',this)">Показать маршрут</button>
+<li>Правее будет боковая центральная лестница.</li>
 
-    <ol class="steps" id="steps315" hidden>
+<li>Поднимись по ней на третий этаж.</li>
 
-      <li>Пройди главный вход, гардероб и турникеты.</li>
+<li>Кабинет 315 будет виден сразу.</li>
 
-      <li>Иди прямо мимо центральной лестницы и медпункта 112.</li>
+</ol>
 
-      <li>Правее будет боковая центральная лестница.</li>
+</div>
 
-      <li>Поднимись по ней на третий этаж.</li>
+<div class="route-card">
 
-      <li>Кабинет 315 будет виден сразу.</li>
+<div class="route-top"><div class="route-symbol" data-icon="route"></div><div><h3>Кабинет 419</h3><p>Английский язык · 4-й этаж</p></div></div>
 
-    </ol>
+<button class="route-toggle" onclick="toggleRoute('steps419',this)">Показать маршрут</button>
 
-  </div>
+<ol class="steps" id="steps419" hidden>
 
-  <div class="route-card">
+<li>Пройди главный вход, гардероб и турникеты.</li>
 
-    <div class="route-top">
+<li>Поверни направо к центральной лестнице.</li>
 
-      <div class="route-symbol" data-icon="route"></div>
+<li>Поднимись на четвёртый этаж.</li>
 
-      <div><h3>Кабинет 419</h3><p>Английский язык · 4-й этаж</p></div>
+<li>Пройди направо через стеклянную дверь.</li>
 
-    </div>
+<li>Найди кабинет 419.</li>
 
-    <button class="route-toggle" onclick="toggleRoute('steps419',this)">Показать маршрут</button>
+</ol>
 
-    <ol class="steps" id="steps419" hidden>
+</div>
 
-      <li>Пройди главный вход, гардероб и турникеты.</li>
+<div class="route-card">
 
-      <li>Поверни направо к центральной лестнице.</li>
+<div class="route-top"><div class="route-symbol" data-icon="route"></div><div><h3>Кабинет 420</h3><p>Английский язык · 4-й этаж</p></div></div>
 
-      <li>Поднимись на четвёртый этаж.</li>
+<button class="route-toggle" onclick="toggleRoute('steps420',this)">Показать маршрут</button>
 
-      <li>Выйди и пройди направо через стеклянную дверь.</li>
+<ol class="steps" id="steps420" hidden>
 
-      <li>Найди кабинет 419.</li>
+<li>Пройди главный вход, гардероб и турникеты.</li>
 
-    </ol>
+<li>Поверни направо к центральной лестнице.</li>
 
-  </div>
+<li>Поднимись на четвёртый этаж.</li>
 
-  <div class="route-card">
+<li>Найди кабинет 420 рядом с кабинетом 419.</li>
 
-    <div class="route-top">
+</ol>
 
-      <div class="route-symbol" data-icon="route"></div>
+</div>
 
-      <div><h3>Кабинет 420</h3><p>Английский язык · 4-й этаж</p></div>
-
-    </div>
-
-    <button class="route-toggle" onclick="toggleRoute('steps420',this)">Показать маршрут</button>
-
-    <ol class="steps" id="steps420" hidden>
-
-      <li>Пройди главный вход, гардероб и турникеты.</li>
-
-      <li>Поверни направо к центральной лестнице.</li>
-
-      <li>Поднимись на четвёртый этаж.</li>
-
-      <li>Найди кабинет 420 рядом с кабинетом 419.</li>
-
-    </ol>
-
-  </div>
-
-  <div class="note"><b>Важно:</b> на третий этаж нельзя попасть по центральной лестнице обычным проходом — там школьный музей. Для кабинетов 314 и 315 используй боковую или боковую центральную лестницу.</div>
+<div class="note"><b>Важно:</b> на третий этаж нельзя попасть по центральной лестнице обычным проходом — там школьный музей. Для кабинетов 314 и 315 используй боковую или боковую центральную лестницу.</div>
 
 </section>
 
 <section id="places" class="page">
 
-  <h1 class="page-title">Места школы</h1>
+<h1 class="page-title">Места школы</h1><p class="page-sub">Полезные места корпуса 3.</p>
 
-  <p class="page-sub">Полезные места корпуса 3.</p>
-
-  <div id="placesList"></div>
+<div id="placesList"></div>
 
 </section>
 
@@ -554,137 +348,105 @@ button{cursor:pointer}
 
 <nav class="bottom-nav">
 
-  <button class="active" data-page="home" onclick="showPage('home',this)">
+<button class="active" data-page="home" onclick="showPage('home',this)"><span data-icon="home"></span>Главная</button>
 
-    <span data-icon="home"></span>Главная
+<button data-page="subjects" onclick="showPage('subjects',this)"><span data-icon="book"></span>Предметы</button>
 
-  </button>
+<button data-page="rooms" onclick="showPage('rooms',this)"><span data-icon="door"></span>Кабинеты</button>
 
-  <button data-page="subjects" onclick="showPage('subjects',this)">
+<button data-page="routes" onclick="showPage('routes',this)"><span data-icon="route"></span>Маршруты</button>
 
-    <span data-icon="book"></span>Предметы
-
-  </button>
-
-  <button data-page="rooms" onclick="showPage('rooms',this)">
-
-    <span data-icon="door"></span>Кабинеты
-
-  </button>
-
-  <button data-page="routes" onclick="showPage('routes',this)">
-
-    <span data-icon="route"></span>Маршруты
-
-  </button>
-
-  <button data-page="places" onclick="showPage('places',this)">
-
-    <span data-icon="building"></span>Школа
-
-  </button>
+<button data-page="places" onclick="showPage('places',this)"><span data-icon="building"></span>Школа</button>
 
 </nav>
 
 <script>
 
-const icons = {
+const icons={
 
-  school:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6M9 10h.01M15 10h.01M12 10h.01"/></svg>`,
+school:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6M9 10h.01M15 10h.01M12 10h.01"/></svg>`,
 
-  home:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg>`,
+home:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg>`,
 
-  book:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20M8 7h8"/></svg>`,
+book:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20M8 7h8"/></svg>`,
 
-  door:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V3h14v18M3 21h18M9 21V5h8v16"/><circle cx="14" cy="13" r=".8" fill="currentColor" stroke="none"/></svg>`,
+door:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V3h14v18M3 21h18M9 21V5h8v16"/><circle cx="14" cy="13" r=".8" fill="currentColor" stroke="none"/></svg>`,
 
-  person:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`,
+person:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>`,
 
-  route:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H12a3 3 0 0 0 3-3V9a3 3 0 0 1 3-3"/></svg>`,
+route:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H12a3 3 0 0 0 3-3V9a3 3 0 0 1 3-3"/></svg>`,
 
-  building:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h2m2 0h2M9 11h2m2 0h2M9 15h2m2 0h2M10 21v-3h4v3"/></svg>`,
+building:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h2m2 0h2M9 11h2m2 0h2M9 15h2m2 0h2M10 21v-3h4v3"/></svg>`,
 
-  search:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>`,
+pin:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>`,
 
-  pin:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>`,
+medical:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg>`,
 
-  medical:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg>`,
+food:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a8 8 0 0 1-16 0ZM3 21h18M8 4v3m4-4v4m4-3v3"/></svg>`,
 
-  food:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a8 8 0 0 1-16 0ZM3 21h18M8 4v3m4-4v4m4-3v3"/></svg>`,
+sport:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>`,
 
-  sport:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>`,
-
-  rest:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V7a2 2 0 0 1 4 0v3h8V7a2 2 0 0 1 4 0v5M3 12h18v7H3zM6 19v2m12-2v2"/></svg>`
+rest:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V7a2 2 0 0 1 4 0v3h8V7a2 2 0 0 1 4 0v5M3 12h18v7H3zM6 19v2m12-2v2"/></svg>`
 
 };
 
-function icon(name){
-
-  return icons[name] || icons.school;
-
-}
+function icon(name){return icons[name]||icons.school;}
 
 document.getElementById("brandIcon").innerHTML=icon("school");
 
 document.getElementById("heroIcon").innerHTML=icon("school");
 
-document.getElementById("searchIcon").innerHTML=icon("search");
+document.getElementById("searchIcon").innerHTML=icon("search")||`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg>`;
 
 document.querySelectorAll("[data-icon]").forEach(el=>{
 
-  el.innerHTML=icon(el.dataset.icon);
+ el.innerHTML=icon(el.dataset.icon);
 
 });
 
 const data=[
 
- {subject:"История",room:"214",teacher:"Альфия Рамильевна",ico:"book"},
+{subject:"История",room:"214",teacher:"Альфия Рамильевна",ico:"book"},
 
- {subject:"Русский язык",room:"220",teacher:"Галина Сергеевна",ico:"book"},
+{subject:"Русский язык",room:"220",teacher:"Галина Сергеевна",ico:"book"},
 
- {subject:"Литература",room:"220",teacher:"Галина Сергеевна",ico:"book"},
+{subject:"Литература",room:"220",teacher:"Галина Сергеевна",ico:"book"},
 
- {subject:"Биология",room:"315",teacher:"Екатерина Олеговна",ico:"book"},
+{subject:"Биология",room:"315",teacher:"Екатерина Олеговна",ico:"book"},
 
- {subject:"География",room:"314",teacher:"Алёна Николаевна",ico:"pin"},
+{subject:"География",room:"314",teacher:"Алёна Николаевна",ico:"pin"},
 
- {subject:"Технология",room:"116",teacher:"Андрей Анатольевич",ico:"door"},
+{subject:"Технология",room:"116",teacher:"Андрей Анатольевич",ico:"door"},
 
- {subject:"Музыка",room:"401",teacher:"Динис Русланович",ico:"book"},
+{subject:"Музыка",room:"401",teacher:"Динис Русланович",ico:"book"},
 
- {subject:"ИЗО",room:"401",teacher:"Наталья Владимировна",ico:"book"},
+{subject:"ИЗО",room:"401",teacher:"Наталья Владимировна",ico:"book"},
 
- {subject:"Английский язык",room:"419",teacher:"Анжелика Владимировна",ico:"book"},
+{subject:"Английский язык",room:"419",teacher:"Анжелика Владимировна",ico:"book"},
 
- {subject:"Английский язык",room:"420",teacher:"Мисс Грануш",ico:"book"},
+{subject:"Английский язык",room:"420",teacher:"Мисс Грануш",ico:"book"},
 
- {subject:"Математика",room:"421",teacher:"Людмила Николаевна",ico:"book"},
+{subject:"Математика",room:"421",teacher:"Людмила Николаевна",ico:"book"},
 
- {subject:"Физкультура",room:"Спортзал №2",teacher:"Мария Михайловна",ico:"sport"}
+{subject:"Физкультура",room:"Спортзал №2",teacher:"Мария Михайловна",ico:"sport"}
 
 ];
 
 function makeItem(item,mode){
 
-  let title=mode==="teachers"?item.teacher:
+ const title=mode==="teachers"?item.teacher:mode==="rooms"?"Кабинет "+item.room:item.subject;
 
-    mode==="rooms"?"Кабинет "+item.room:item.subject;
+ const subtitle=mode==="teachers"?item.subject:mode==="rooms"?item.subject+" · "+item.teacher:item.teacher;
 
-  let subtitle=mode==="teachers"?item.subject:
+ return `<div class="item">
 
-    mode==="rooms"?item.subject+" · "+item.teacher:item.teacher;
+ <div class="item-icon">${icon(item.ico)}</div>
 
-  let badge=item.room;
+ <div class="item-main"><b>${title}</b><small>${subtitle}</small></div>
 
-  return `<div class="item">
+ <span class="room-badge">${item.room}</span>
 
-    <div class="item-icon">${icon(item.ico)}</div>
-
-    <div class="item-main"><b>${title}</b><small>${subtitle}</small></div>
-
-    <span class="room-badge">${badge}</span>
-
-  </div>`;
+ </div>`;
 
 }
 
@@ -696,37 +458,41 @@ document.getElementById("teacherList").innerHTML=data.map(x=>makeItem(x,"teacher
 
 const places=[
 
- ["Гардероб","После главного входа","door"],
+["Гардероб","После главного входа","door"],
 
- ["Медпункт 112","Рядом с маршрутом к лестницам","medical"],
+["Медпункт 112","Рядом с маршрутом к лестницам","medical"],
 
- ["Столовая","Центральный блок Ц","food"],
+["Столовая","Центральный блок Ц","food"],
 
- ["Спортивный зал №2","Для уроков физкультуры","sport"],
+["Спортивный зал №2","Для уроков физкультуры","sport"],
 
- ["Зоны отдыха","Диваны, столы и места для отдыха","rest"]
+["Зоны отдыха","Диваны, столы и места для отдыха","rest"]
 
 ];
 
 document.getElementById("placesList").innerHTML=places.map(p=>`
 
- <div class="place-card">
+<div class="place-card">
 
-  <div class="item-icon">${icon(p[2])}</div>
+<div class="item-icon">${icon(p[2])}</div>
 
-  <div class="item-main"><b>${p[0]}</b><small>${p[1]}</small></div>
+<div class="item-main"><b>${p[0]}</b><small>${p[1]}</small></div>
 
- </div>`).join("");
+</div>`).join("");
 
 function showPage(id,button){
 
  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
 
- document.getElementById(id).classList.add("active");
+ const page=document.getElementById(id);
+
+ if(!page)return;
+
+ page.classList.add("active");
 
  document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.remove("active"));
 
- const target=button || document.querySelector(\`.bottom-nav button[data-page="\${id}"]\`);
+ const target=button||document.querySelector('.bottom-nav button[data-page="'+id+'"]');
 
  if(target)target.classList.add("active");
 
@@ -737,6 +503,8 @@ function showPage(id,button){
 function toggleRoute(id,button){
 
  const el=document.getElementById(id);
+
+ if(!el)return;
 
  el.hidden=!el.hidden;
 
@@ -762,7 +530,7 @@ function searchAll(){
 
  );
 
- box.innerHTML=\`<div class="section-head"><h2>Результаты</h2><span>\${found.length} найдено</span></div>\`+
+ box.innerHTML='<div class="section-head"><h2>Результаты</h2><span>'+found.length+' найдено</span></div>'+
 
  (found.length?found.map(x=>makeItem(x,"subjects")).join(""):'<div class="empty">Ничего не найдено. Попробуй другой запрос.</div>');
 
