@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#172b4d">
-<link rel="apple-touch-icon" href="./IMG_9642.jpeg">
+<link rel="apple-touch-icon" href="./IMG_9630.jpeg">
 <title>Школьный навигатор №65</title>
 <style>
 :root{--navy:#102d60;--blue:#1764f5;--bg:#edf3ff;--green:#258b67;--text:#102954;--muted:#52688e}
@@ -15,7 +15,7 @@ button,input,select{font:inherit}
 button{cursor:pointer}
 svg{display:block}
 .icon{width:27px;height:27px;flex-shrink:0}
-header{min-height:190px;padding:24px 22px 48px;color:white;border-radius:0 0 28px 28px;background:linear-gradient(110deg,#10274cdd,#153b76b8),url('./IMG_9631.jpeg') center 43%/cover}
+header{min-height:190px;padding:24px 22px 48px;color:white;border-radius:0 0 28px 28px;background:linear-gradient(110deg,#10274cdd,#153b76b8),url('./IMG_9630.jpeg') center 43%/cover}
 .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px}
 .logo65{font-size:38px;font-weight:900;letter-spacing:-4px;color:#a8e4cf}
@@ -86,7 +86,6 @@ footer{text-align:center;color:#8292ad;font-size:11px;padding:25px 0}
 </head>
 <body>
 
-<!-- SVG-иконки -->
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden">
 <symbol id="i-school" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M8 9h1m6 0h1M8 12h1m6 0h1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7c-2-2-5-2-9-2v14c4 0 7 0 9 2m0-14c2-2 5-2 9-2v14c-4 0-7 0-9 2m0-14v14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -137,7 +136,7 @@ footer{text-align:center;color:#8292ad;font-size:11px;padding:25px 0}
     <div class="photo-copy"><span>Столовая<br><small>Современная столовая</small></span><span class="arrow-circle"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
    </button>
    <button class="photo-card" onclick="page('about')">
-    <img src="./IMG_9632.jpeg" alt="Школа №65 вечером" onerror="this.style.display='none'">
+    <img src="./IMG_9631.jpeg" alt="Школа №65" onerror="this.style.display='none'">
     <div class="photo-copy"><span>О школе<br><small>Узнай больше о школе №65</small></span><span class="arrow-circle"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
    </button>
   </div>
@@ -157,6 +156,7 @@ footer{text-align:center;color:#8292ad;font-size:11px;padding:25px 0}
 <section id="teachers" class="hidden">
  <h2>Учителя</h2><input id="teacherFilter" class="filter" placeholder="Имя учителя..."><div id="teacherList"></div>
 </section>
+
 <section id="routes" class="hidden">
  <h2>Маршруты по школе</h2>
  <div class="panel"><h3>Куда тебе нужно?</h3>
@@ -175,23 +175,26 @@ footer{text-align:center;color:#8292ad;font-size:11px;padding:25px 0}
   <option value="Спортивный зал №2">Спортивный зал №2</option>
  </select><div id="routeResult"></div></div>
 </section>
+
 <section id="cafeteria" class="hidden">
  <h2>Столовая</h2>
  <div class="panel"><img src="./IMG_9633.jpeg" alt="Столовая" style="width:100%;border-radius:15px;object-fit:cover;max-height:340px" onerror="this.style.display='none'">
  <h3 style="margin-top:14px">Столовая школы №65</h3>
- <p>Светлая столовая с белыми столами и жёлтыми и серыми стульями — именно так выглядит столовая на твоём фото.</p>
+ <p>Светлая столовая с белыми столами и жёлтыми и серыми стульями.</p>
  <span class="pill">Корпус 3</span></div>
  <div class="panel"><h3>Где находится?</h3><p>Столовая находится в центральном блоке Ц, после входной зоны.</p></div>
  <button class="back" onclick="page('home')">← На главную</button>
 </section>
+
 <section id="about" class="hidden">
  <h2>О школе №65</h2>
- <div class="panel"><img src="./IMG_9632.jpeg" alt="Школа №65" style="width:100%;border-radius:15px;max-height:350px;object-fit:cover" onerror="this.style.display='none'">
+ <div class="panel"><img src="./IMG_9631.jpeg" alt="Школа №65" style="width:100%;border-radius:15px;max-height:350px;object-fit:cover" onerror="this.style.display='none'">
  <h3 style="margin-top:14px">Школа №65 · Корпус 3</h3><p>Навигатор помогает ориентироваться в школьных кабинетах, находить учителей и узнавать маршруты.</p></div>
  <div class="panel"><h3>Основные блоки</h3><p><b>Блок Н</b> — начальная школа.</p><p><b>Блок С</b> — старшая школа.</p><p><b>Блок Ц</b> — центральная часть со столовой и спортивными залами.</p></div>
  <div class="panel"><h3>Полезные места</h3><p>Медицинский кабинет — 112.</p><p>Спортивный зал №2 — второй этаж.</p></div>
  <button class="back" onclick="page('home')">← На главную</button>
 </section>
+
 <footer>Школьный навигатор №65 · Ученик 5В</footer>
 </main>
 
@@ -220,17 +223,29 @@ const data=[
 {subject:"Математика",room:"421",teacher:"Людмила Николаевна"},
 {subject:"Физкультура",room:"Спортивный зал №2",teacher:"Мария Михайловна"}
 ];
+
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
 function card(d){
-return `<article class="item"><h3>${esc(d.subject)}</h3><p>Кабинет: <b>${esc(d.room)}</b></p><p>Учитель: ${esc(d.teacher)}</p><button class="action" onclick="openRoute('${esc(d.room)}')">Как пройти →</button></article>`;
+return `<article class="item">
+<h3>${esc(d.subject)}</h3>
+<p>Кабинет: <b>${esc(d.room)}</b></p>
+<p>Учитель: ${esc(d.teacher)}</p>
+<button class="action" onclick="openRoute('${esc(d.room)}')">Как пройти →</button>
+</article>`;
 }
-function results(items){return items.length?items.map(card).join(""):'<div class="empty">Ничего не найдено. Попробуй другой запрос.</div>';}
+
+function results(items){
+return items.length?items.map(card).join(""):'<div class="empty">Ничего не найдено. Попробуй другой запрос.</div>';
+}
+
 function search(q){
 q=q.trim().toLocaleLowerCase('ru');
 if(!q)return [];
 return data.filter(d=>[d.subject,d.room,d.teacher].some(v=>v.toLocaleLowerCase('ru').includes(q)));
 }
+
 function runSearch(){
 const q=$("globalSearch").value;
 if(!q.trim()){
@@ -242,8 +257,10 @@ $("homeContent").classList.add("hidden");
 $("searchResults").classList.remove("hidden");
 $("searchResults").innerHTML='<h2>Результаты поиска</h2>'+results(search(q));
 }
+
 $("globalSearch").addEventListener("input",runSearch);
 $("globalSearch").addEventListener("keydown",e=>{if(e.key==="Enter")runSearch();});
+
 function page(id){
 document.querySelectorAll("main section").forEach(s=>s.classList.add("hidden"));
 $(id).classList.remove("hidden");
@@ -253,26 +270,56 @@ $("searchResults").classList.add("hidden");
 if(id==="home")$("homeContent").classList.remove("hidden");
 window.scrollTo({top:0,behavior:"smooth"});
 }
-function openRoute(room){page("routes");$("routeSelect").value=room;showRoute();}
+
+function openRoute(room){
+page("routes");
+$("routeSelect").value=room;
+showRoute();
+}
+
 function showRoute(){
-const r=$("routeSelect").value;let t="";
-if(r==="314"||r==="315")t="От входа пройди через гардероб и турникеты. Иди прямо мимо центральной лестницы и медицинского кабинета 112. Справа будет боковая центральная лестница. Поднимись на третий этаж. Кабинет 315 будет сразу заметен, кабинет 314 находится напротив.";
-else if(r==="419"||r==="420")t="От входа пройди через гардероб и турникеты, поверни направо к центральной лестнице и поднимись на четвёртый этаж. Выйди и иди направо через стеклянную дверь. Кабинет 419 слева, 420 справа от боковой центральной лестницы возле стеклянной двери.";
-else if(r==="114"||r==="116")t="Кабинеты находятся на первом этаже. Технология для девочек — кабинет 114, Анастасия Сергеевна. Технология для мальчиков — кабинет 116, Андрей Анатольевич.";
-else if(r==="401")t="Найди указатели к кабинету 401. Здесь проходят музыка и ИЗО.";
-else if(r==="Спортивный зал №2")t="Спортивный зал №2 находится на втором этаже.";
-else if(r==="214"||r==="220"||r==="421")t="Следуй указателям на этаже к кабинету "+r+". Если маршрут не совпадает с расположением кабинетов, уточни его у учителя.";
+const r=$("routeSelect").value;
+let t="";
+
+if(r==="314"||r==="315"){
+t="От входа пройди через гардероб и турникеты. Иди прямо мимо центральной лестницы и медицинского кабинета 112. Справа будет боковая центральная лестница. Поднимись на третий этаж. Кабинет 315 будет сразу заметен, кабинет 314 находится напротив. Важно: по центральной лестнице на третий этаж пройти нельзя — там школьный музей.";
+}
+else if(r==="419"||r==="420"){
+t="От входа пройди через гардероб и турникеты. Направляйся к центральной лестнице и поднимись на четвёртый этаж. Перейди из центральной зоны в блок Н. Коридор разветвляется: ориентируйся на стеклянную дверь и боковую центральную лестницу. Кабинет 419 находится слева, кабинет 420 — справа от боковой центральной лестницы возле стеклянной двери.";
+}
+else if(r==="114"||r==="116"){
+t="Кабинеты находятся на первом этаже. Технология для девочек — кабинет 114, Анастасия Сергеевна. Технология для мальчиков — кабинет 116, Андрей Анатольевич. Ориентируйся на указатели блока начальной школы.";
+}
+else if(r==="401"){
+t="Кабинет 401 находится на четвёртом этаже в блоке начальной школы. Здесь проходят музыка и ИЗО. Следуй указателям к кабинету 401.";
+}
+else if(r==="Спортивный зал №2"){
+t="Спортивный зал №2 находится на втором этаже. Иди по указателям к спортивным залам центрального блока.";
+}
+else if(r==="214"){
+t="Кабинет 214 находится на втором этаже. Учитель истории — Альфия Рамильевна. На этаже ориентируйся по табличкам с номерами кабинетов.";
+}
+else if(r==="220"){
+t="Кабинет 220 находится на втором этаже. Здесь проходят русский язык и литература. Учитель — Галина Сергеевна. Ориентируйся по табличкам кабинетов.";
+}
+else if(r==="421"){
+t="Кабинет 421 находится на четвёртом этаже. Учитель математики — Людмила Николаевна. Поднимись на четвёртый этаж и следуй указателям.";
+}
+
 $("routeResult").innerHTML=t?`<div class="item"><h3>Твой маршрут</h3><p>${esc(t)}</p></div>`:"";
 }
+
 function fillList(inputId,targetId){
 $(inputId).addEventListener("input",()=>{
 const q=$(inputId).value;
 $(targetId).innerHTML=results(search(q));
 });
 }
+
 $("subjectList").innerHTML=results(data);
 $("roomList").innerHTML=results(data);
 $("teacherList").innerHTML=results(data);
+
 fillList("subjectFilter","subjectList");
 fillList("roomFilter","roomList");
 fillList("teacherFilter","teacherList");
